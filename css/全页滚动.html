@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>title</title>
+</head>
+<style>
+   
+</style>
+<link rel="stylesheet" href="./css/360page.css">
+<body>
+    <div id="dowebok">
+        <div class="section one">
+                    <div class="logo">
+                        </div>
+                        <div class="text">
+                            <img src="./img/text_1.png" alt="">
+                            <img src="./img/text_2.png" alt=""> 
+                            <img src="./img/text_3.png" alt="">
+                            <img src="./img/text_4.png" alt="">
+                            <img src="./img/text_5.png" alt="">
+                            <img src="./img/text_6.png" alt="">
+                            <img src="./img/text_7.png" alt="">
+                            <img src="./img/text_8.png" alt="">
+                        </div>
+           
+        </div>
+        <div class="section two">
+                <div class="box">
+                        <img src="./img/shield_1_01.png" alt="">
+                        <img src="./img/shield_1_02.png" alt="">
+                        <img src="./img/shield_1_03.png" alt="">
+                        <img src="./img/shield_1_04.png" alt="">
+                        <img src="./img/shield_1_05.png" alt="">
+                        <img src="./img/shield_1_06.png" alt="">
+                        <img src="./img/shield_1_07.png" alt="">
+                        <img src="./img/shield_1_08.png" alt="">
+                        <img src="./img/shield_1_09.png" alt="">
+                </div>
+                <div class="info">
+                        <img src="./img/" alt="">
+                </div>
+        </div>
+        <div class="section tree">
+           <div class="info"></div>
+           <div class="cirle">
+               <div class="rocket">
+
+               </div>
+           </div>
+        </div>
+        <div class="section four ">
+            <div class="search ">
+                <div class="searchBar">
+
+                </div>
+                <div class="searchText">
+
+                </div>
+                <div class="searchResult">
+
+                </div>
+               
+            </div>
+            <div class="info"></div>
+        </div>
+        <div class="section five">
+            <h3>五</h3>
+        </div>
+    </div>
+</body>
+<script src="./img/jquery.min.js"></script>
+<script src="./img/jquery.fullPage.min.js"></script>
+<script>
+    console.log($);
+    $(function(){
+        $('#dowebok').fullpage({
+            sectionsColor:['#0da5d6','#2ab561','#de8910','#168a9d','#0da5d6'],
+            afterLoad: function(anchorLink,index){
+                var timer = setTimeout(function(){
+                    $('.section').eq(index - 1).addClass('activedom').siblings('.section').removeClass('activedom');
+                },500)
+              
+            }
+        })
+        
+    })
+</script>
+</html>

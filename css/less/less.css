@@ -1,0 +1,118 @@
+@charset "UTF-8";
+/* 
+    声名字符串格式
+    */
+/* 
+    @charset "UTF-8:
+*/
+/* 
+    生成变量  @ 必须以;分号结束
+    1、不能以数字开头
+    
+*/
+a:hover {
+  color: #eee;
+}
+div {
+  color: #eee;
+}
+/* 
+    类名xu
+*/
+.box {
+  color: #eee;
+}
+/* 
+    mixins 混入
+*/
+/* 
+    类混入
+*/
+.main {
+  display: flex;
+}
+.box {
+  flex: 1;
+  color: black;
+}
+.main-box {
+  color: #eee;
+  flex: 1;
+  color: black;
+  flex-direction: row;
+  align-content: unset;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  border: 1px solid #010101;
+  height: 100px;
+  position: relative;
+  display: inline;
+}
+.main-box:hover img {
+  height: 100px;
+  width: 100px;
+}
+/* 
+    函数混入
+*/
+/* 定义函数 */
+.main-boxClss {
+  display: flex;
+  height: 100px;
+  flex: 1;
+  width: 100%;
+  height: 100%;
+}
+/* 
+    定义了参数，在调用的时候必须传参。没有默认值就会报错
+    怎么定义默认值 和定义变量时一样的
+*/
+.box {
+  flex-direction: row;
+  align-content: unset;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  border: 1px solid #010101;
+  height: 100px;
+  position: relative;
+}
+.box_inside {
+  border: 1px solid #f10909;
+  display: flex;
+  height: 50%;
+  width: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+/* 
+    嵌套。伪元素伪类选择器。
+*/
+.box {
+  display: inline;
+}
+.box:hover img {
+  height: 100px;
+  width: 100px;
+}
+/* 
+    内置函数
+    运算
+*/
+/* 
+    less可用于图片的调整
+*/
+ul {
+  width: 500%;
+}
+ul li {
+  width: 20%;
+  /* 颜色的加减 */
+  color: #f20a0a;
+  background: #1a1a1a;
+  /* 内置函数 调节亮度 */
+  border: 100px solid #ff3333;
+}

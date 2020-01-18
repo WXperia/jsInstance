@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        .view {
+            height: 300px;
+            width: 560px;
+            margin: 300px auto;
+            position: relative;
+        }
+        ul {
+            width: 100%;
+            height: 100%;
+            list-style: none;
+            transform-style: preserve-3d;
+            /* transform: rotate3d(1,1,0,-30deg); */
+        }
+        /* 
+            li 是做结构的
+         */
+        ul > li {
+             width: 25%;
+             height: 100%;
+            float: left;
+            flex-direction: row;
+            transform-style: preserve-3d;
+            transition: transform linear 1s;
+            position: relative;
+         }
+        ul > li >span {
+            position: absolute;
+             width: 100%;
+             height: 100%;
+             left: 0;
+             top: 0;
+         }
+         .view > ul > li >span:nth-of-type(1){
+            
+             background: url('./img/q1.jpg');
+             transform: translateZ(150px);
+             
+         }
+         .view > ul > li >span:nth-of-type(2){
+             
+             background: url('./img/q2.jpg');
+             transform: translateY(-150px) rotateX(90deg);
+             
+         }
+         .view > ul > li >span:nth-of-type(3){
+        
+             background: url('./img/q3.jpg');
+             transform: translateZ(-150px) rotateX(180deg);
+         }
+         .view > ul > li >span:nth-of-type(4){
+     
+             background: url('./img/q4.jpg');
+             transform: translateY(150px) rotateX(-90deg);
+         }
+         .view > ul > li:nth-of-type(2) > span {
+            background-position: -100% 0;
+         }
+         .view > ul > li:nth-of-type(4) > span {
+            background-position: -300% 0;
+         }
+         .view > ul > li:nth-of-type(5) > span {
+            background-position: -400% 0;
+         }
+         .view > ul > li:nth-of-type(3) > span {
+            background-position: -200% 0;
+         }
+         .last , .next {
+            width: 60px;
+            height: 60px;
+            text-align: center;
+            line-height:60px;
+            position: absolute;
+            top: 50%;
+            text-decoration: none;
+            font-size: 40px;
+            transform: translate(0,-50%);
+            background-color: rgba(0,0,0,0.5);
+            color: #fff;
+         }
+         .last {
+            left: 0;
+         }
+         .next {
+            right: 0;
+         }
+         
+    </style>
+</head>  
+<body>
+    <div class="view">
+          
+        <ul>
+            <li>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </li>
+            <li>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </li>
+            <li>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </li>
+            <li>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </li>
+            <!-- <li>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </li> -->
+        </ul>
+        <a href="" class="last"><</a>
+         <a href="" class="next">></a>
+    </div>
+</body>
+<script>
+    window.onload = function(){
+        var time = 0;
+       
+        var flg  =  true;
+        var next = document.querySelector('.next');
+        var last = document.querySelector('.last');
+        var li = document.querySelectorAll('li');
+        //节流阀
+        console.log(li);
+        next.onclick=  function(event){
+            if(flg){
+                time --;
+                flg = false;
+                var e = event || window.event;
+                for(var i =0;i<=li.length-1;i++){
+                    li[i].style.transform = 'rotateX('+ time*90 +'deg)';
+                    li[i].style.transitionDelay = (i*0.1)+'s';
+                }
+                console.log('666');
+                
+            }
+           
+            var timer = setTimeout(function(){
+                flg = true;
+                clearTimeout(timer);
+            },1500)
+            return false;
+        }
+        last.onclick=  function(event){
+            if(flg){
+                time++
+                flg = false;
+                var e = event || window.event;
+                for(var i =0;i<=li.length-1;i++){
+                li[i].style.transform = 'rotateX('+ time*90 +'deg)';
+                li[i].style.transitionDelay = (i*0.2)+'s';
+            }
+                console.log('666');
+            }
+            var timer = setTimeout(function(){
+                flg = true;
+                clearTimeout(timer);
+            },1500)
+            return false;
+        }
+        
+    }
+</script>
+</html>

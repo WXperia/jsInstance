@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+    <style>
+        .box {
+            width: 1000px;
+            height: 1000px;
+            margin: 400px auto;
+            background: rgb(25, 136, 226);
+            border-radius: 500px;
+            position: relative;
+        }
+        .rec {
+            width: 300px;
+            height: 300px;
+            background: rgb(207, 80, 80);
+            position: absolute;
+            /* 
+                垂直居中的原理
+                1、left top 参照父级容器的width和height来进行调整位置
+                2、translate() 则是参照元素本身
+             */
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%)
+        }
+    </style>
+<body>
+    <div class="box">
+        <div class="rec">
+
+        </div>
+    </div>
+</body>
+</html>

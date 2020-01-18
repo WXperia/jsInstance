@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    .box {
+        width: 100%;
+        height: auto;
+        border: 1px solid #eee;
+        display: flex;
+    }
+    .box div {
+        width: 100px;
+        height: 50px;
+        background: rgb(145, 66, 66);
+        /* 
+            用来设置当前子元素占据剩余空间的比例值
+
+         */
+        flex: 1;
+    }
+    .menu {
+        width: 300px;
+        height: 20px;
+        
+    }
+    .menu > ul {
+        width: 100%;
+        height: auto;
+        display: flex;
+        list-style: none;
+    }
+    .menu > ul > li {
+        height: 20px;
+        flex: 1;
+        background: rgb(196, 85, 85);
+        text-align: center;
+    }
+</style>
+<body>
+    <div class="menu">
+        <ul>
+            <li>213123</li>
+            <li>12312312</li>
+            
+        </ul>
+    </div>
+    <div class="box">
+        <div>111</div>
+        <div>222</div>
+        <div>333</div>
+        <div>444</div>
+        <div>555</div>
+    </div>    
+</body>
+</html>

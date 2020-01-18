@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    .box  {
+        width: 1100px;
+        height: 250px;
+        border: 1px solid #eee;
+        display: flex;
+        flex-direction: row;
+        margin: 100px auto;
+        
+        
+    }
+    .box div:nth-of-type(1) {
+        width: 250px;
+        height: 250px;
+       
+        background: rgb(55, 184, 108);
+        /* 
+            空间不够时，每个元素收缩的宽度所占的比例
+
+         */
+         flex-shrink: 0;
+    }
+    .box div:nth-of-type(3) {
+        width: 250px;
+        height: 250px;
+      
+        background: rgb(55, 184, 108);
+        /* 
+            空间不够时，每个元素减少的宽度所占的比例
+
+         */
+         flex-shrink: 1;
+    }
+    .box div:nth-of-type(4) {
+        width: 250px;
+        height: 250px;
+        
+        background: rgb(55, 184, 108);
+        /* 
+            空间不够时，每个元素减少的宽度所占的比例
+
+         */
+         flex-shrink: 0;
+    }
+    .box div:nth-of-type(5) {
+        width: 250px;
+        height: 250px;
+      
+        background: rgb(55, 184, 108);
+        /* 
+            空间不够时，每个元素减少的宽度所占的比例
+
+         */
+         flex-shrink: 0;
+    }
+    .box div:nth-of-type(2) {
+        width: 250px;
+        height: 250px;
+     
+        background: rgb(55, 184, 108);
+        /* 
+            空间不够时，每个元素减少的宽度所占的比例
+
+         */
+         flex-shrink: 0;
+    }
+</style>
+<body>
+    <div class="box">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</body>
+</html>

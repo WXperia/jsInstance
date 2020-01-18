@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- sessionStorage -->
+    <input type="text" name="" id="inp">
+    <input type="button" value="设置数据" id="setData">
+    <input type="button" value="获取数据" id="getData">
+    <input type="button" value="删除数据" id="removeData">
+</body>
+<script>
+    function AutoJson(o){
+        if(o ==='' || o){
+            if( o.__proto__.constructor.name === 'String'){
+            console.log('string 转 Json');
+            console.log(arguments)
+            if(!/(\{)/g.test(o)){
+                var os = new Object();
+                os[arguments[0]] = o;
+                var os = JSON.stringify(os)
+                console.log(os);
+                return JSON.parse(os)
+            }
+            return JSON.parse(o)
+            
+        }else if (o.__proto__.constructor.name === 'Object'){
+            console.log('JSON 转 string');
+            return JSON.stringify(o)
+        }else {
+            console.log('错误的类型：'+ o.__proto__.constructor.name )
+        }
+        }else {
+            console.log(arguments[0] + '=' + o );
+        }
+    };
+   var a = AutoJson('adcdgfds');
+   console.log(a);
+   a = AutoJson(a);
+   console.log(a);
+    document.querySelector("#setData").addEventListener('click',function(){
+        var name = new Object({
+            name:'小6',
+            type:'人类',
+            none:{
+                "1":1,
+                "2":2
+            }
+        });
+        var sname = AutoJson(name);
+        console.log(name );
+        var ses = document.querySelector('#inp');
+        console.log(name);
+        window.localStorage.setItem("usermessage",sname);
+        
+    })
+    document.querySelector("#getData").addEventListener('click',function(){
+        var a = window.localStorage.getItem("usermessage");
+        console.log(a)
+        a = AutoJson(a);
+        console.log(a);
+    })
+    document.querySelector("#removeData").addEventListener('click',function(){
+        var a = window.localStorage.removeItem("usermessage");
+        
+    })
+</script>
+</html>

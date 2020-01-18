@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    div {
+        width: 150px;
+        height: 100px;
+        background: rgb(117, 216, 178);
+        margin: 20px auto;
+        transition: transform 1s linear 0s;
+    }
+    /* div:nth-of-type(1){
+        transition: transform 1s linear 0s;
+    }
+    div:nth-of-type(2){
+        transition: transform 1s linear 0s;
+    }
+    div:nth-of-type(3){
+        transition: transform 1s linear 0s;
+    }
+    div:nth-of-type(4){
+        transition: transform 1s linear 0s;
+    }
+    div:nth-of-type(5){
+        transition: transform 1s linear 0s;
+    } */
+    div:nth-of-type(1):active{
+        /* 
+            三维移动 x y z 轴
+         */
+        transform: translate3d(10px,10px,10px);
+    }
+    div:nth-of-type(2):active{
+        /* 
+            三维缩放 x y z 轴
+         */
+        transform: scale3d(1,1.5,10)
+    }
+    div:nth-of-type(3):active{
+        /* 
+            三维旋转
+            rotate3d(x,y,z,deg)
+            x y z 的比例 旋转的角度 deg
+            向量 
+         */
+        transform: rotate3d(1.5,1,0,100deg)
+    }
+    div:nth-of-type(4):active{
+        
+    }
+    div:nth-of-type(5):active{
+        
+    }
+</style>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+</html>

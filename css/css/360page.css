@@ -1,0 +1,176 @@
+.current {
+    font-size: 100px;
+}
+*{
+    padding: 0;
+    margin: 0;
+}
+.section {
+    overflow: hidden;
+}
+body {
+    background: rgb(38, 184, 111);
+}
+.two > div{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.two .box {
+    width: 440px;
+    font-size: 0; /* 去除基线对齐 */
+}
+.two .info {
+    height: 309px;
+    width: 635px;
+    background: url('/img/info_2.png')
+}
+.box > img:nth-of-type(1){
+    transform: translate(300px,100px) rotate(200deg);
+}
+.box > img:nth-of-type(2){
+    transform: translate(30px,100px) rotate(200deg);
+}
+.box > img:nth-of-type(3){
+    transform: translate(0px,100px) rotate(200deg);
+}
+.box > img:nth-of-type(4){
+    transform: translate(200px,100px) rotate(200deg);
+}
+.box > img:nth-of-type(5){
+    transform: translate(-10px,-100px) rotate(200deg);
+}
+.box > img:nth-of-type(6){
+    transform: translate(-300px,100px) rotate(200deg);
+}
+.box > img:nth-of-type(7){
+    transform: translate(-200px,-100px) rotate(200deg);
+}
+.box > img:nth-of-type(8){
+    transform: translate(-133px,124px) rotate(200deg);
+}
+.box > img:nth-of-type(9){
+    transform: translate(200px,-144px) rotate(200deg);
+}
+.activedom .box  img {
+    transform: none;
+}
+
+.box > img {
+    transition: transform 2s linear 0s;
+}
+.one{
+    padding-top: 100px
+}
+.one .logo {
+    background: url("../img/logo.png");
+    height: 196px;
+    width: 265px;
+    background-repeat: no-repeat;
+    margin: 100px auto;
+}
+.one .text {
+    width: 100%;
+    text-align: center;
+    margin-top: 100px auto ;
+    
+    
+}
+
+.one .text img {
+    margin: 0px 20px;
+    opacity: 0.2;
+    transition: margin 1s linear 0s,opacity 1s linear 0s;
+}
+.activedom .text img {
+    margin: 0px 0px;
+    opacity: 1;
+}
+
+.tree .info{
+    height: 278px;
+    width: 631px;
+    background: url("../img/info_3.png");
+    position: absolute;
+    left: 50%;
+    transform: translate(-150%,150%);
+   
+}
+.tree .cirle {
+    height: 449px;
+    width: 453px;
+    background: url("../img/circle.png");
+    position: absolute;
+    right: 50%;
+    transform: translate(150%,79%);
+
+}
+.tree .cirle .rocket {
+    height: 204px;
+    width: 203px;
+    background: url("../img/rocket.png");
+    position: absolute;
+    left: -100%;
+    top: 200%;
+    opacity: 0;
+    transform: translate(-50%,-50%);
+    transition: left 1s linear,top 1s linear,opacity 1s linear 0s;
+}
+.activedom .cirle .rocket {
+    left: 50%;
+    top: 50%;
+    opacity: 1;
+}
+.four {
+    position: relative;
+}
+.four .search {
+    width: 529px;
+    height: 438px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-100%,-50%);
+}
+.four .search > .searchBar {
+    width: 0px;
+    height: 66px;
+    background: url("../img/search.png");
+    transition: width 1s linear 0s;
+}
+.four .search > .searchText {
+    background: url("../img/key.png");
+    width: 0px;
+    height: 22px;
+    position: absolute;
+    left: 3%;
+    top: 5%;
+    transition: width 1s linear 1s;
+   
+}
+.four .search > .searchResult {
+    width: 529px;
+    height: 0px;
+    background: url("../img/result.png");
+    transition: height 1s linear 2s;
+}
+.four .info {
+    width: 612px;
+    height: 299px;
+    background: url("../img/info_4.png");
+    position: absolute;
+    right: 50%;
+    top: 50%;
+    transform: translate(110%,-70%);
+    
+
+}
+.activedom  .search .searchText {
+    width: 99px;
+}
+.activedom .search .searchBar {
+    width: 529px;
+}
+.activedom .search .searchResult {
+    height: 372px;
+}

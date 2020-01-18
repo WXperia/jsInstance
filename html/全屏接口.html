@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <img src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1690699292,1481547313&fm=27&gp=0.jpg" alt="">
+        <input type="button"  id="full" value="全屏">
+        <input type="button"  id="cancelFull" value="退出全屏">
+        <input type="button"  id="isFull" value="是否全屏">
+    </div>
+</body>
+<script>
+    //判断是否为全屏显示状态：
+    //使用此函数记得需要进行兼容性
+    // chrome:webkit firefox:moz ie:ms opera:o
+    //1、 requestFullScreen() :开启全屏显示
+    //2、 cancelFullScreen(): 退出全屏显示
+    //3、 fullScreenElement: 是否全屏状态
+    window.onload = function(){
+        var div = document.querySelector("div")
+        
+        var browser = navigator.appCodeName
+        console.log(browser)
+        console.log(navigator)
+        document.querySelector('#full').onclick=function(){
+            var Full = div.webkitRequestFullScreen() || div.mozRequestFullScreen() || div.msRequestFullScreen() || div.oRequestFullScreen();
+            console.log(Full)
+            if(div.webkitRequestFullScreen){
+                div.webkitRequestFullScreen()
+            }else if(div.mozRequestFullScreen){
+                div.mozRequestFullScreen()
+            }else if (div.msRequestFullScreen){
+                div.msRequestFullScreen()
+            }else if (div.oRequestFullScreen){
+                div.oRequestFullScreen()
+            }
+
+
+        }
+        document.querySelector('#cancelFull').onclick= function(){
+            if(div.webkitCancelFullScreen){
+                div.webkitCancelFullScreen()
+            }else if(div.mozCancelFullScreen){
+                div.mozCancelFullScreen()
+            }else if (div.msCancelFullScreen){
+                div.msCancelFullScreen()
+            }else if (div.oCancelFullScreen){
+                div.oCancelFullScreen()
+            }
+        }
+        document.querySelector('#isFull').addEventListener('click',function(){
+            if(document.webkitFullScreenElement || document.msFullScreenElement || document.mozFullScreenElement || document.oFullScreenElement) {
+                console.log(true)
+            }else {
+                console.log(false)
+            }
+        })
+    }
+</script>
+</html>

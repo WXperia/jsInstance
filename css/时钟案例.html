@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .biaopan {
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            border: 10px solid #eee;
+            margin: 100px auto;
+            position: relative;
+        }
+        .kedu {
+            height: 480px;
+            width: 10px;
+            background: rgb(255, 255, 255);
+            position: absolute;
+            border-top:20px solid rgb(22, 18, 18);
+            border-bottom: 20px solid rgb(26, 23, 23);
+            left: 50%;
+            top: -10px;
+            transform: translate(-50%,0);
+        }
+        .k1 {
+            transform: translate(-50%,0) rotate(30deg);
+        }
+        .k2 {
+            transform: translate(-50%,0) rotate(60deg);
+        }
+        .k3 {
+            transform: translate(-50%,0) rotate(90deg);
+        }
+        .k4 {
+            transform: translate(-50%,0) rotate(120deg);
+        }
+        .k5 {
+            transform: translate(-50%,0) rotate(150deg);
+        }
+        .k6 {
+            transform: translate(-50%,0) rotate(180deg);
+        }
+        .point {
+            width: 100px;
+            height: 100px;
+            background: rgb(120, 216, 219);
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            border-radius: 50%;
+        }
+        .se,.min,.hour {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-100%);
+            transform-origin: center bottom;
+        }
+        @keyframes sss {
+            from{
+                transform: translate(-50%,-100%) rotate(0deg);
+            }
+            to{
+                transform: translate(-50%,-100%) rotate(360deg);
+            }
+        }
+        /* @keyframes mmm {
+            from{
+                transform: translate(-50%,-100%) rotate(0deg);
+            }
+            to{
+                transform: translate(-50%,-100%) rotate(360deg);
+            }
+        } */
+        .se {
+            width: 8px;
+            height: 250px;
+            background: #eee;
+            animation: sss  60s infinite steps(60);
+        }
+        .hour {
+            width: 12px;
+            height: 200px;
+            background: rgb(248, 153, 153);
+            animation: sss  3600s linear infinite;
+        }
+        .min {
+            width: 10px;
+            height: 230px;
+            background: rgb(153, 248, 190);
+            animation: sss  216000s linear infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="biaopan">
+        <div class="kedu k1"></div>
+        <div class="kedu k2"></div>
+        <div class="kedu k3"></div>
+        <div class="kedu k4"></div>
+        <div class="kedu k5"></div>
+        <div class="kedu k6"></div>
+        <div class="se"></div>
+        <div class="min"></div>
+        <div class="hour"></div>
+        <div class="point"></div>
+    </div>
+</body>
+</html>

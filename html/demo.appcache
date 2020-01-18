@@ -1,0 +1,15 @@
+CACHE MANIFEST
+#上面一句代码必须是文档的第一句
+#配置每一次都需要从服务器获取文件清单列表
+#配置如果文件无法获取则使用指定的文件进行替代
+CACHE:
+../css/img/1.jpg
+../css/img/2.jpg
+
+NETWORK:
+../images/13.jpg
+../css/img/text_1.png
+
+FALLBACK:
+
+../css/img/2.jpg

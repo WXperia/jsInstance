@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+ .box1 {
+     height: 200px;
+     width: 200px;
+
+ }
+ .box2 {
+     height: 200px;
+     width: 200px;
+ }
+ div p {
+     background: yellow;
+ }
+ .box1,.box2 {
+     border: 1px solid red;
+ }
+</style>
+<body>
+    <div class="box1" >
+        <p id="dragp" draggable="true">wowowo</p>
+    </div>
+    <div class="box2">
+
+    </div>
+</body>
+<script>
+    var box1 = document.querySelector('.box1');
+    var box2 = document.querySelector('.box2');
+    var p = document.querySelector('#dragp')
+    //应用于被拖拽元素
+    p.ondragstart = (e) => {
+        console.log('dragstart'+e);
+    } 
+    // p.ondrag = (e) => {
+    //     console.log('ondrag'+e)
+    // }
+    p.ondragleave = (e) => {
+        console.log('onleave'+e )
+    }
+    p.ondragend = (e) => {
+        console.log('ondragend'+e);
+    }
+    //应用于目标元素
+    box2.ondragenter = () => {
+        console.log('ondragenter' )
+    }
+    box2.ondragover = (e) => {
+        console.log('ondragover' )
+        e.preventDefault()
+    }
+    box2.ondrop = (e) => {
+        console.log('ondrop' )
+        box2.appendChild(p)
+    }
+    box2.ondragleave = () => {
+        console.log('ondragleave' )
+        
+    }
+</script>
+</html>

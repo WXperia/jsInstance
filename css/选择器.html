@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    li {
+        font-weight: bold;
+    }
+    /* 
+        属性选择器
+        + ： 获取当前元素相邻满足调监的元素
+        
+     */
+     /* .red + li{
+         color: blue;
+        
+         font-size: 100;
+     } */
+     /* 
+        ~ ： 获取满足条件的兄弟元素
+      */
+     /* .red ~ li {
+         color: red;
+     } */
+     /* 相对于父元素的结构伪类 */
+     /* 
+        1、相对于父元素的结构为类
+        2、查找的类型必须是指定的类型，下面指定的是li
+        3、在下面的实例代码中，并没有元素字体变为红色，说明只有li的父元素
+        下的第一个子元素为li时才会生效
+      */
+      li:first-child{
+          color: red;
+      }
+      li:last-child{
+          color: rgba(15, 65, 58, 0.11);
+      }
+      /* 
+            以上的标签可能不是经常使用的元素，
+       */
+      li:first-of-type{
+          
+          font-size: 100px;
+      }
+      /* 
+        索引从一开始，可以写关键字
+       */
+      li:nth-child(2){
+          background: rgba(41, 197, 176, 0.11)
+      }
+      /* 
+        偶数元素添加背景
+       */
+       /* li:nth-child(even){
+           background: rgb(2, 124, 133);
+       }
+       li:nth-child(odd){
+           background: rgb(99, 12, 212);
+       } */
+       /* 
+        nth-of-type: 限制类型为li
+        */
+       li:nth-of-type(n+5){
+            background: rgb(2, 124, 133);
+       }
+       /* 
+            可以写关键字，表达式。
+        */
+        /* 
+            没有任何的内容，空格都没有 
+            empty
+         */
+        li:empty{
+            background: rgb(163, 13, 13);
+            
+        }
+</style>
+<body>
+    <ul>
+        <span>999</span>
+        <li class="red">12</li>
+        <li class="blue">213</li>
+        <li class="yellow"></li>
+        <li class="bluebl">32423423</li>
+        <li class="red">12</li>
+        <li class="blue">213</li>
+        <li class="yellow">321132</li>
+        <li class="red">12</li>
+        <li class="blue">213</li>
+        <li class="yellow">321132</li>
+        <li class="red">12</li>
+        <li class="blue">213</li>
+        <li class="yellow">321132</li>
+        <li class="red">12</li>
+        <li class="blue">213</li>
+        <li class="yellow">321132</li>
+        <li class="red">12</li>
+        <li class="blue">213</li>
+        <li class="yellow">321132</li>
+        <li class="red">12</li>
+        <li class="blue">213</li>
+        <li class="yellow">321132</li>
+    </ul>
+</body>
+<script>
+
+</script>
+</html>

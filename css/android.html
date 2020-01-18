@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        padding: 0px;
+        margin: 0px;
+    }
+    .an-header,.an-bodys {
+        width: 300px;
+
+    }
+    .an-bodys{
+        height: 350px;
+        margin: 10px auto;
+    }
+    .an-header {
+        margin: 10px auto;
+        height: 175px;
+        border-radius: 175px 175px 0px 0px;
+    }
+    .an-header::before{
+        content: "";
+        width: 20px;
+        height: 20px;
+        background: #fff;
+        display: block;
+        position: absolute;
+        left: 520px;
+        top: 93px;
+        border-radius: 20px;
+    }
+    .an-header::after{
+        content: "";
+        width: 20px;
+        height: 20px;
+        background: #fff;
+        display: block;
+        position: absolute;
+        left: 633px;
+        top: 93px;
+        border-radius: 20px;
+    }
+    .an-bodys::after {
+        height: 300px;
+        width: 50px;
+        content: "";
+        position: absolute;
+        display: block;
+        background: inherit;
+        left: 372px;
+        top: 196px;
+        border-radius: 25px;
+    }
+    .an-bodys::before {
+        height: 300px;
+        width: 50px;
+        content: "";
+        position: absolute;
+        display: block;
+        background: inherit;
+        left: 757px;
+        top: 196px;
+        border-radius: 25px;
+    }
+    .content .an-header,.an-bodys,.an-footer::after,.an-footer::before{
+        background: rgb(22, 158, 22)
+    }
+    .content{
+        height: 1000px;
+        width: 1000px;
+        margin: 0px auto;
+        border: 1px solid #eee;
+    }
+    .an-footer {
+        border: 1px solid red;
+        width: 300px;
+        height: 300px;
+        margin: 0px auto;
+    }
+    .an-footer::after {
+        height: 225px;
+        width: 50px;
+        content: "";
+        position: absolute;
+        display: block;
+        left: 656px;
+        top: 482px;
+        border-radius: 25px;
+    }
+    .an-footer::before {
+        height: 225px;
+        width: 50px;
+        content: "";
+        position: absolute;
+        display: block;
+        left: 489px;
+        top: 482px;
+        border-radius: 25px;
+    }
+</style>
+<body>
+    <div class="content">
+        <div class="an-header">
+
+        </div>
+        <div class="an-bodys">
+
+        </div>
+        <div class="an-footer">
+            
+        </div>  
+    </div>
+</body>
+</html>

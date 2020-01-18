@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+ .do {
+     height: 10px;
+     width: 10px;
+     background: rgb(218, 80, 80);
+     /* 
+        设置动画的名字
+      */
+     animation-name: showdiv;
+     /* 
+        设置动画时间 
+     */
+     animation-duration: 0.5s;
+     /* 
+        设置动画播放的次数，默认为1次，可以指定具体的数值买也可以指定无限次
+      */
+      animation-iteration-count: infinite;
+     /* 
+        设置交替动画
+      */
+      animation-direction: alternate;
+      transform-origin: -300px -300px;
+      margin: 300px auto;
+      /* 
+        设置动画延迟执行
+       */
+      animation-delay: 2s;
+      /* 
+        设置动画结束的状态，默认情况下，会回到最初的状态
+        默认：   forwards: 保持结束状态
+                backwards: 回到开始状态，可以直接初始化状态
+                both: 保持结束状态 两者都会保留
+       */
+      animation-fill-mode:  backwards;
+      /* 
+        动画的时间函数
+
+       */
+       animation-timing-function: linear;
+       /* 
+        动画播放状态
+        
+        */
+        animation-play-state: running;
+ }
+    /* 
+        添加动画效果
+
+    */
+  @keyframes showdiv {
+      0%{
+          transform: rotate(20deg);
+      }
+      100%{
+      
+          transform: rotate(60deg);
+      }
+  }
+  
+</style>
+<body>
+    <div class="do">
+        
+    </div>
+    <button class="bottom">暂停</button>
+</body>
+    <script>
+   
+    var btn = document.querySelector('.bottom');
+    var div = document.querySelector('.do')
+    var flg = true;
+    btn.addEventListener('click',function(e){
+        if(flg){
+            div.style.animationPlayState = 'paused';
+            flg = !flg;
+            btn.innerHTML = '播放'
+        }else{
+            div.style.animationPlayState = 'running';
+            flg = !flg;
+            btn.innerHTML = '暂停';
+        }
+        console.log(btn)
+    })
+    </script>
+</html>

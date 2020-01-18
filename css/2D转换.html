@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+
+    }
+    div{
+        width: 300px;
+        height: 300px;
+        /* 只填一个值表示改变x轴坐标 */
+        background: aqua;
+        transition: background  2s linear 0s,transform 2s linear 0s;
+        transform-origin: left top;
+    }
+    div:active{
+        background: red;
+        /* 
+            。///单独传值默认X轴
+         */
+        /* 
+            translate 实现 x y 轴上的移动
+         */
+         /* 
+            scale 实现缩放 scaleX() scaleY()
+         */
+         /* 
+            rotate() 实现旋转角度
+            正+ 角度顺时针旋转
+            负- 逆时针旋转
+            注意：！！！ 旋转也会将坐标系旋转，
+          */
+          /* 
+            skew() 实现元素的倾斜
+            单独传值，向x轴方向倾斜，
+            先x轴再y轴
+           */
+           /* 
+            transform-origin
+            */
+            /* 
+                同时添加多个 transform 变化属性
+             */
+        transform:  translate(400px,300px) 
+                    scale(2) 
+                    rotate(100deg) 
+                    skew(30deg,-30deg); 
+        
+        
+    }
+</style>
+<body>
+    <div>
+
+    </div>
+</body>
+</html>

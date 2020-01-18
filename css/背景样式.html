@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    .bgct{
+        border: 1px solid red;
+        width: 500px;
+        height: 500px;
+        background-image: url("./6f8a2832ly1fxde596o9uj247p2dcb29.jpg");
+        background-repeat: no-repeat;
+        /* 
+            添加背景颜色
+            background-color:blue;
+            添加图片背景
+            background-image:url();
+            默认情况：
+                1、如果图片大于容器，那么就会从容器的左上角开始放置
+                2、如果小于容器，则平铺
+            设置平铺背景 
+            backgound-repeat: space
+                round:图片进行缩放之后再平铺
+                space: 图片平铺时，之间的空隙扩大
+            设置图片在滚动时，背景是否跟着一起滚动
+            backgrund-attachment:
+                fixed:背景不随滚动而滚动
+                scroll:背景滚动
+            local和scroll的区别
+            local: 给容器增加滚动条，容器的内容会滚动
+            scroll: 容器背景不跟内容一起滚动
+
+         */
+         background-size: contain;
+         /* 
+            设置背景图片的大小，auto 自动适应容器
+            使用此属性时，确定好图片的宽高比和容器是否一致
+            否则会变形
+          */
+          /* 
+            backgound-size:contain
+            自适应元素的背景区
+            1、图片大于容器
+            等比例缩放在容器中
+            2、图片小于容器
+            等比例放大在容器中，因为是等比例放大所以图片会溢出。
+           */
+
+    }
+</style>
+<body>
+    <div class="bgct">
+
+    </div>
+</body>
+</html>

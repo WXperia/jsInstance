@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    .box  {
+        width: 1000px;
+        height: auto;
+        border: 1px solid #eee;
+        display: flex;
+        /*
+            设置主轴方向
+                row; 横
+                column; 竖  
+         */
+        flex-direction: row;
+        margin: 100px auto;
+        /* 
+
+            flex-flow shi flex-wrap 和 flex-direction的综合
+            flex-wrap: 控制子元素是否换行显示，默认不换行
+                nowrap: 不慌行 --则收缩
+                wrap: 换行
+                wrap-reverse: 反转 从上到下开始排列
+         */
+        flex-wrap: wrap;
+
+    }
+    .box div {
+        width: 250px;
+        height: 250px;
+        border: 1px solid rgb(27, 36, 167);
+        background: rgb(55, 184, 108);
+    }
+</style>
+<body>
+    <div class="box">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</body>
+</html>

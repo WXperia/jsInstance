@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <img src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1690699292,1481547313&fm=27&gp=0.jpg" alt="">
+    <form action="">
+            <!-- multiple 属性控制是否支持多选 -->
+        <input type="file" name="myFile"  multiple  id="myFile" onchange="getFileContent()"><br>
+        <input type="submit" value="提交文件">
+    </form>
+</body>
+<script>
+    /* 
+        FileReader: 读取文件内容
+        1、readAsText()：读取文本文件
+        2、readAsBinaryString(): 读取任意类型的文件 返回二进制字符串，通常用来存储文件
+        3、readAsDataURL(): 读取文件获取一段以data开头的字符串本质就是 DataURL ,是一种将文件嵌入到文档的方案
+        讲资源转化为base64的字符串，并且讲内容直接存储在url中
+        4、abort()中断读取
+        
+     */
+     function getFileContent() {
+        var reader = new FileReader();
+        var i = 0;
+     var file = document.querySelector('#myFile').files;
+     var len = file.length;
+     console.log(len);
+     var loader = new Loader(file);
+     loader.init(file)
+     }
+     //多线上传文件 
+    
+     function Loader(){
+         if(this instanceof Loader){
+             this.rander = {};
+             };
+             this.img = {};
+         }
+     
+     Loader.prototype.init = function (files){
+         console.log(files)
+        if(files.length>=1){
+                for(var i=0; files[i+1] ; i++){
+                    this[files[i].name] = new FileReader();
+                    this[files[i].name].readAsDataURL(files[i]);
+                    var timer = setTimeout(function(){
+                        this[files[i].name].onload = function () {
+                        console.log(this[files[i].name].result)
+                        this.rander(this[files[i].name].result)
+                    }
+                    }.bind(this),2000)
+                    
+            }
+        }else {
+            console.err('文件流为空')
+        }
+     }
+     Loader.prototype.rander =function(result){
+         if(result !== ''){
+             var img = document.createElement('img');
+             img.width = 200;
+             img.height = 200;
+             img.src = result;
+             document.body.appendChild(img);
+         }else {
+             throw Error('base64为空');
+         }
+     }
+   
+</script>
+</html>

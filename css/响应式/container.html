@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>bootstrap title</title>
+</head>
+<link rel="stylesheet" href="./bootstrap-3.3.7/dist/css/bootstrap.css">
+<script src="./lib/html5shiv/html5shiv-printshiv.js"></script>
+<script src="./lib/respond/respond.min.js"></script>
+<style>
+    .container {
+        height: 100px;
+        background: #eee;
+    }
+    .container > .row {
+        height: 25px;
+        background: green;
+    }
+    .row div {
+        height: 25px;
+        border: 1px solid ;
+    }
+    .container:nth-of-type(2){
+        height: 100px;
+        background: red;
+    }
+    .container:nth-of-type(2)>.row div{
+        height: 25px;
+        background: rgb(55, 179, 148);
+    }
+    .container:nth-of-type(3){
+        height: 100px;
+        background: red;
+    }
+    .container:nth-of-type(3)>.row div{
+        height: 25px;
+        background: rgb(68, 66, 196);
+    }
+    .container:nth-of-type(4){
+        height: 100px;
+        background: rgb(153, 59, 59);
+    }
+    .container:nth-of-type(4)>.row div{
+        height: 25px;
+        background: rgb(66, 112, 196);
+    }
+</style>
+<body>
+    <div class="container"><!-- 栅格系统，网状布局 -->
+        <!-- 行：row -->
+        <!-- 
+            col 列样式
+            第一* : 屏幕的大小
+            lg 大屏设备 lg 大屏设备上生效包括本身
+            第二* : 默认分成12份，数字代表的是占多少份
+
+         -->
+        <div class="row">
+            <div class="col-lg-4">
+                大屏设备 col-lg
+            </div>
+            <div class="col-lg-4">
+                大屏设备 col-lg
+            </div>
+            <div class="col-lg-4">
+                大屏设备 col-lg
+            </div>
+        </div>
+    </div>
+    <!-- 
+        流布局容器
+        col-*-* 不确定；参数
+     -->
+     <div class="container"><!-- 栅格系统，网状布局 -->
+        <!-- 行：row -->
+        <!-- 
+            col 列样式
+            第一* : 屏幕的大小
+            md 中屏设备以上生效包括本身
+         -->
+        <div class="row">
+            <div class="col-md-4">
+                中屏幕设备 col-md-4
+            </div>
+            <div class="col-md-4">
+                中屏幕设备 col-md-4
+            </div>
+            <div class="col-md-4">
+                中屏幕设备 col-md-4
+            </div>
+        </div>
+    </div>
+    <div class="container"><!-- 栅格系统，网状布局 -->
+        <!-- 行：row -->
+        <!-- 
+            col 列样式
+            sm 小屏幕设备
+         -->
+        <div class="row">
+            <div class="col-sm-4">
+                小屏幕设备 col-sm-4
+            </div>
+            <div class="col-sm-4">
+                小屏幕设备 col-sm-4
+            </div>
+            <div class="col-sm-4">
+                小屏幕设备 col-sm-4
+            </div>
+        </div>
+        
+    </div>
+    <div class="container"><!-- 栅格系统，网状布局 -->
+        <!-- 行：row -->
+        <!-- 
+            col 列样式
+            xs 超小屏幕设备
+         -->
+        <div class="row">
+            <div class="col-xs-4">
+                小屏幕设备 col-xs-4
+            </div>
+            <div class="col-xs-4">
+                小屏幕设备 col-xs-4
+            </div>
+            <div class="col-xs-4">
+                小屏幕设备 col-xs-4
+            </div>
+        </div>
+        
+    </div>
+</body>
+<script src="./lib/jquery/jquery.min.js"></script>
+<script src="./bootstrap-3.3.7/dist/js/bootstrap.min.js"></script>
+<script>
+    
+</script>
+</html>

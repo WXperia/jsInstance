@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function A(){}
+    A.prototype.say = function()  {
+        console.log('A')
+    }
+    var a = new A()
+    a.prototype.say = function()  {
+        console.log('a')
+    }
+    a.say()
+</script>
+</html>

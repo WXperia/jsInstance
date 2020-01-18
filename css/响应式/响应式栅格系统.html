@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>bootstrap title</title>
+</head>
+<link rel="stylesheet" href="./bootstrap-3.3.7/dist/css/bootstrap.css">
+<script src="./lib/html5shiv/html5shiv-printshiv.js"></script>
+<script src="./lib/respond/respond.min.js"></script>
+<style>
+
+    .container {
+        height: 100px;
+        background: rgb(194, 71, 71);
+    }
+    .container .row:nth-of-type(1) div {
+        height: 20px;
+        background: rgb(81, 196, 106);
+        border: 1px solid;
+    }
+    .container .row:nth-of-type(2) div {
+        height: 20px;
+        background: rgb(81, 196, 106);
+        border: 1px solid;
+    }
+</style>
+<body>
+    <!-- 
+        大屏幕：平均分成6等分，
+        中屏幕：平均分成四等分；
+        小屏幕：平均分成3等分；
+        超小 ： 平均分成2等分
+     -->
+     
+     <div class="container">
+         
+         <div class="row">
+                      
+         <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6"></div>
+         <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6"></div>
+         <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6"></div>
+         <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6"></div>
+         <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6"></div>
+         <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6"></div>
+         </div>
+         <!-- 
+             列的偏移
+          -->
+         <div class="row">
+            
+            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                
+            </div>
+            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xs-offset-8">
+                
+            </div>
+         </div>
+    </div>
+     </div>
+    
+</body>
+<script src="./lib/jquery/jquery.min.js"></script>
+<script src="./bootstrap-3.3.7/dist/js/bootstrap.min.js"></script>
+<script>
+export default {
+    
+}
+</script>
+</html>

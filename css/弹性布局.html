@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    /* 
+        传统布局的局限性
+
+    */
+    .box:nth-of-type(1) {
+        width: 100%;
+        height: auto;
+        border: 1px solid #fff;
+        /* 
+            设置父容器为弹性盒子
+         */
+        display: flex;
+        /* 
+            设置子元素的排列方式 row 横排
+         */
+        flex-direction: row;
+        /* 
+            设置子元素的排列方式
+            flex-start: 从开始开始排序
+            flex-end: 从结束开始排序
+            center ： 靠经中间开始排
+            space-between : 左右对齐父容器的开始和结束，中间产生相同的间距
+
+         */
+        justify-content: flex-start;
+        /* 
+            设置子元素在父元素中对齐的方向
+            center 在父元垂直居中对齐
+            stretch: 让子元素填充整个侧轴方向 默认值
+            baseline : 文本基线对齐。
+         */
+         align-items: center;
+        
+    }
+    .box:nth-of-type(2) {
+        width: 100%;
+        height: auto;
+        border: 1px solid #fff;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+         /* 
+            设置单个元素在侧轴方向上对齐
+          */
+        align-self: flex-start;
+    }
+    .box:nth-of-type(3) {
+        width: 100%;
+        height: auto;
+        border: 1px solid #fff;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .box:nth-of-type(4) {
+        width: 100%;
+        height: auto;
+        border: 1px solid #fff;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .box:nth-of-type(5) {
+        width: 100%;
+        height: auto;
+        border: 1px solid #fff;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .right {
+        height: 200px;
+        width: 200px;
+        background: rgb(204, 30, 30);
+    }
+    .left {
+        height: 160px;
+        width: 160px;
+        border: 20px solid rgb(93, 80, 207);
+        background: rgb(46, 139, 146);
+    }
+    .center {
+        height: 200px;
+        width: 200px;
+        background: rgb(62, 31, 102);
+    }
+</style>
+<body>
+    <div class="box">
+        <div class="right">flex-start</div>
+        <div class="center"></div>
+        <div class="left"></div>
+        <div class="left"></div>
+            <div class="left"></div>
+            <div class="left"></div>
+    </div>
+    <div class="box">
+            <div class="right">flex-end</div>
+            <div class="center"></div>
+            <div class="left"></div>
+            <div class="left"></div>
+            <div class="left"></div>
+            <div class="left"></div>
+    </div>
+    <div class="box">
+            <div class="right">justify-content: center;</div>
+            <div class="center"></div>
+            <div class="left"></div>
+            <div class="left"></div>
+            <div class="left"></div>
+            <div class="left"></div>
+    </div>
+    <div class="box">
+                <div class="right">justify-content: space-between;</div>
+                <div class="center"></div>
+                <div class="left"></div>
+                <div class="left"></div>
+            <div class="left"></div>
+            <div class="left"></div>
+    </div>
+    <div class="box">
+            <div class="right">justify-content: space-around;</div>
+            <div class="center"></div>
+            <div class="left"></div>
+            <div class="left"></div>
+            <div class="left"></div>
+    </div>
+    
+</body>
+</html>
