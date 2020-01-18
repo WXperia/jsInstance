@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    .box {
+      width: 450px;
+      margin: 200px auto;
+    }
+
+    .txt {
+      width: 350px;
+    }
+
+    .pop {
+      width: 350px;
+      border: 1px solid red;
+    }
+
+    .pop ul {
+      margin: 10px;
+      padding: 0px;
+      width: 200px;
+      list-style-type: none;
+
+    }
+
+    .pop ul li {
+
+    }
+</style>
+<body>
+    <div class="box">
+        <input type="text" class="txt">
+        <input type="button" class="btn" value="搜索">
+        <!-- <div class="pop">
+        </div>     -->
+    </div>
+</body>
+<script>
+    var txt = document.querySelector('.txt');
+    var btn = document.querySelector('.btn');
+    var data = ['1','2','3','sadads','nohio','sdqwjpoo','  kl']
+    
+    function Filter(data,text){
+        var res = []
+        if(text != ''){
+            for(var i = 0;i<=data.length-1;i++){
+            
+            var d = data[i];
+            if(d.indexOf(text) >='0'){
+                console.log(d)
+                res.push[i]
+                console.log(res)
+            }
+        }
+       
+        }
+        
+        return res;
+    }
+    txt.addEventListener('keyup',function(){
+        var e = event || window.event;
+        Filter(data,txt.value)
+    })
+    function runder(res){
+        if(res != '') {
+            
+        }
+    }
+</script>
+</html>

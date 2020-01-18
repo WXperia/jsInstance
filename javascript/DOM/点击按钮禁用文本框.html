@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input class="btn" type="button" value="禁用文本框">
+    <input type="text" class="inp">
+
+</body>
+<script>
+    var btn = document.getElementsByClassName('btn')[0]
+    var inp = document.getElementsByClassName('inp')[0]
+
+    btn.addEventListener('click',function(){
+       inp.disabled = inp.disabled === true? false : true;
+       inp.style.background = 'yellow';
+    })
+</script>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" class="btn" value="哈哈">
+    <img src="" alt="">
+</body>
+<script>
+    var btn = document.querySelector('.btn')
+    var img = document.querySelector('img')
+    var url = 'DOM\img\6f8a2832ly1fxde30ock7j21z4140dwy.jpg'
+    var flg = false
+    btn.addEventListener('click',function(){
+            if(flg){
+                img.setAttribute("src","./img/6f8a2832ly1fxde30ock7j21z4140dwy.jpg")
+                flg = !flg;
+            }else {
+                img.setAttribute("src","");
+                flg = !flg;
+            }
+    })
+</script>
+</html>

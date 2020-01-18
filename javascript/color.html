@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    #color {
+        width: 100px;
+        height: 100px;
+        border: 1px solid rebeccapurple;
+    }
+    #color2 {
+        width: 100px;
+        height: 100px;
+        border: 1px solid rebeccapurple;
+    }
+    body {
+        background: black
+    }
+</style>
+<body>
+    <div id="color"></div>
+    <div id="color2"></div>
+</body>
+<script src="Color.js">
+</script>
+<script>
+    var color = new Color()
+   var div =  document.getElementById('color')
+   var div2 =  document.getElementById('color2')
+    setInterval(function(){
+    div.style.background = color.getColor('rgb')
+    div2.style.background = color.getColor('rgba')
+    },1000
+        )
+   
+</script>
+</html>

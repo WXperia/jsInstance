@@ -1,0 +1,19 @@
+.adapterMinxin(@index) when (@index > 0){
+    /* 基本原理 */
+/*     @media (min-width: 720px){
+        html {
+            font-size: 720px/10;
+        }
+    }
+    @media (min-width: 750px){
+        html {
+            font-size: 750px/10;
+        }
+    } */
+    /* 使用迭代遍历@adapterDevList中的预设设备宽度 */
+    @media (min-width: extract(@adapterDevList,@index)) {
+        html {
+            font-size: @baseFontSize / @psdWidth * extract(@adapterDevList,@index);        }
+    }
+    .adapterMinxin(@index - 1);
+}

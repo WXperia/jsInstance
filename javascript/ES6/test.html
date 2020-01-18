@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+/* 
+    模板字符串
+*/
+var c = 1,b=2;
+/* 
+    能够保存字符的格式
+*/
+var a = `${c=b},       
+${b}`
+console.log(a)
+/* 
+    对象的简写
+*/
+var func1 = function(){
+    
+}
+
+var obj1 = {
+    func1,
+    a,
+    b,
+    a(){
+
+    },
+}
+
+/* 
+    对象的属性名表达式
+*/
+
+var obj1 = {
+    x: 1,
+    /*  属性名动态获取*/
+    [b]:'12'
+}
+
+console.log(obj1['2'])
+
+/* 
+    迭代器
+
+    for .. in 
+    for .. of
+
+*/
+
+let ForObj = [1,2,3,4]
+let obj2 = {left:1,top:2,bottom:3}
+for(var key in ForObj){
+    console.log(`for...in 打印key值：${key}`)
+}
+for(var value of ForObj){
+    console.log(`for...of打印value值：${value}`)
+}
+//手写迭代协议
+console.log(obj2)
+obj2[Symbol.iterator] = function(){
+    //获取对象key的长度
+    let keys = Object.keys(this)
+    let len  = keys.length
+    let n = 0
+    let that = this
+    console.log(this)
+    return {
+        next: function(){
+            if(n<len){
+                return {
+                    value:{key:keys[n],value:that[keys[n++]]},
+                    done: false
+                }
+            } else {
+                    return {
+                        done:true
+                    }
+                }
+        }
+    }
+}
+for(var {key,value} of obj2){
+    console.log(key,value)
+}
+</script>
+</html>

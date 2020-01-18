@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+
+</style>
+<body>
+    <p>我是内容</p>   
+    <p>我是内容</p>    <p>我是内容</p>    <p>我是内容</p>    
+    <p>我是内容</p>    <p>我是内容</p>    <p>我是内容</p>    
+    <p>我是内容</p>    <p>我是内容</p>    <p>我是内容</p>    
+    <p>我是内容</p>    <p>我是内容</p>    <p>我是内容</p>    
+    <p>我是内容</p>    <p>我是内容</p>    <p>我是内容</p>    
+    <p>我是内容</p>    <p>我是内容</p>    <p>我是内容</p>     
+</body>
+    <script>
+    
+    var p = document.querySelector('p');
+    var ps = document.getElementsByTagName('p');
+    var i = 0,len = ps.length;
+    for(; i< len ; i++) {
+        ps[i].addEventListener('click',function(event){
+            var e = event || window.event;
+            e.target.innerText = '小内容' + i;v
+        })
+    }
+    </script>
+</html>

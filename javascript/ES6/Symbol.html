@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    /* 
+        SYmbol 
+        属性私有化 - 数据保护
+     */
+    let l = {left:L,top:T,bottom:B,height:H,width:W} =  getComputedStyle(document.body);
+    /* 
+    ...能够把数组转化为参数序列形式
+     */
+     let att = [1,2,3,4,5]
+     console.log(...att)
+     console.log(l);
+</script>
+</html>

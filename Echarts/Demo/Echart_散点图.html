@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script src="../node_modules/echarts/dist/echarts.js"></script>
+<script></script>
+<style>
+    #main {
+        height: 500px;
+        width: 500px;
+    }
+</style>
+<body>
+    <div id="main">
+
+    </div>
+</body>
+<script>
+    var mycharts = echarts.init(document.getElementById('main'))
+    // mycharts.showLoading({
+    //     text: '加载中...'
+    // })
+    var option = {
+        legend: {
+            padding: 5,
+            itemGap: 10,
+            data: ['ios','android']
+        },
+        tooltip: { //气泡提示配置
+            trigger: 'item' //可修改为 axis
+        },
+        // xAxis: [
+        //     {
+        //         type:'category',
+        //         data: ['1','2','3','4','5','6','7','8','9','10','11','12'],
+                
+        //     }
+        // ],
+        // yAxis: [
+        //     {
+        //         type:'value',
+        //         boundaryGap:[0.1,0.1], //控制轴方向上的数值留有多少空余，按此轴的百分比计算
+        //         splitNumber: 4
+        //     }
+        // ],
+        series: [
+            // {
+            //     name:'ios',
+            //     type:'pie', //图表的类型，折线图 line，散点图scatter，柱状图bar，饼图pie，雷达图radar
+            //     data: [111,112,113,114,32,324,432,534,563,32,32,123]
+            // },
+            {
+                name:'android',
+                type: 'pie',
+                data: [45,123,145,526,233,343,44,829,33,123,45,13]
+            }
+        ]
+    }
+    mycharts.setOption(option)
+    
+</script>
+</html>

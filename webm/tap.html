@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    .box {
+        height: 300px;
+        width: 300px;
+        background: #eee;
+        font-size: 100px;
+    }
+</style>
+<body>
+    <div class="box"></div>
+</body>
+<script>
+    // 移动端
+    //在移动端，也有click事件，（用于区分，是华东还是点击事件）
+    // tap 事件的封装
+    var div = document.querySelector('.box')
+    TapEvent(div,function(){
+        console.log('aaa')
+    })
+    function TapEvent(dom,callback){
+            startTime = 0,
+            endTime = 0,
+            time = 0,
+            isMove = false;
+
+        dom.addEventListener('touchstart',function(){
+            startTime = Date.now();
+        })
+        dom.addEventListener('touchmove',function(){
+            isMove = true;
+        })
+        dom.addEventListener('touchend',function(event){
+            var e = event || window.event;
+            endTime = new Date().getTime();
+            time = endTime - startTime;
+            if(time >= 150){
+                console.log('click');
+                callback && callback.call(this,e);
+                dom.innerText = 'click';
+                return;
+            }
+            if(time <= 150){
+                console.log('tap');
+                callback && callback.call(this,e);
+                dom.innerText = 'tap';
+            }
+        })
+        
+    }
+</script>
+</html>

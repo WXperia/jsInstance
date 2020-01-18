@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    .level {
+        width: 50px;
+        height: 10px;
+        border: 1px solid #eee
+    }
+    .level1 {
+        width: 50px;
+        height: 10px;
+        border: 1px solid #eee;
+        background: red;
+    }
+    .level2 {
+        width: 100px;
+        height: 10px;
+        border: 1px solid #eee;
+        background: yellow;
+    }
+    .level3 {
+        width: 150px;
+        height: 10px;
+        border: 1px solid #eee;
+        background: green;
+    }
+</style>
+<body>
+    <input type="text" id="password" > <p class="waring"></p>
+    <div id="level" class="level">
+</div>
+</body>
+<script>
+    var ip = document.getElementById('password');
+    var div = document.getElementById('level');
+    var waring = document.querySelector('.waring');
+  
+    ip.addEventListener('keyup',function(e){
+            
+            console.log(e.keyCode)
+            var flg = ip.value.length
+            var lv = flg >= 6 ? check(ip.value) : 0;
+            div.className = 'level'+ lv.level ;
+            waring.innerHTML = lv.waring || '密码长度至少6位'
+    })
+    function check(val){
+        
+        console.log(val)
+
+        var lv = 0;
+
+        var waring = 1;
+
+        if(/[0-9]+|[a-zA-z]+/.test(val)){
+                lv ++
+                waring = '较弱';
+                if(/[0-9]+[a-zA-z]+/.test(val)){
+                lv ++
+                waring = '中等'
+
+            }if(/\W+/.test(val)){
+                lv ++
+                waring = '较强'
+            }
+        }
+
+        return obj = {
+            level: lv,
+            waring: waring,
+        }
+    }
+    // function check(level, childs){
+        
+    //     if(level === 1){
+    //         childs[0].style.background = 'red'
+    //     }if (level === 2){
+    //         for(var i = 0;i< 2;i++){
+    //             childs[i].style.background = 'yellow'
+    //         }
+    //     }if(level === 3) {
+    //         for(var i = 0;i< 3;i++){
+    //             childs[i].style.background = 'green'
+    //         }
+    //     }if(level === 0){
+    //         for(var i = 0;i< 3;i++){
+    //             childs[i].style.background = ''
+    //         }
+    //     }
+    // }
+    // ip.addEventListener('keydown',function(){
+    //     clearTimeout(timer)
+    //         var level = 0;
+    //      var timer = setTimeout(function(){
+    //         console.log(ip.value)
+    //         if(ip.value.length >=6){
+    //             if(/[0-9]+/.test(ip.value)){
+    //             level ++;
+    //             check(level,div.children)
+    //             console.log(1)
+    //         }if(/[a-zA-z]+/.test(ip.value)){
+    //             level ++;
+    //             console.log(2)
+    //             check(level,div.children)
+    //         }if(/\W+/.test(ip.value)){
+    //             level ++;
+    //             check(level,div.children)
+    //             console.log('3')
+    //         }
+    //     }else {
+    //         for(var i = 0;i< 3;i++){
+    //             div.children[i].style.background = ''
+    //         }
+    //     } 
+    //      })
+    // })
+        
+</script>
+</html>

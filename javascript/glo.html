@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+var GlobalData = function(){
+    if(this instanceof GlobalData) {
+           return this
+       }else {
+           return new GlobalData();
+       }
+}
+GlobalData.prototype.setItem = function(key,value){
+   if(typeof key != 'string'){
+       key = key.toString()
+   }
+    window.localStorage.setItem(key,JSON.stringify(value))
+}
+GlobalData.prototype.getItem = function(key){
+   var _res = JSON.parse(window.localStorage.getItem(key))
+   return _res
+}
+
+var gd = new GlobalData()
+
+gd.setItem('user','xieziqian')
+
+var a = gd.getItem('user')
+
+console.log(a)
+</script>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    
+</body>
+<script>
+    /* 
+        函数默认值
+    */
+    function fn1(x = 0,y = 2){
+        //形参中不是所有的形参都有默认值
+        /* 
+            有默认值的通常卸载形参的后面
+        */
+        console.log(x,y)
+    }
+    fn1(3,4)
+    fn1()
+    function fn2(obj = {}){
+        console.log(obj)
+    }
+    fn2({x:10,y:20})
+    fn2()
+    /* 
+        剩余形参
+    */
+   function fn3(data, ...data2){
+       for(let i = 0;i <data2.length;i++){
+           data.push(data2[i])
+       }
+   }
+   /* 
+        函数简写
+
+   */
+   //只有普一个形参
+   let fn4 = x => {
+       return x - 10
+   }
+   //只有一句rreturn语句 return 和括号都能省略
+   let fn4 = x => x - 10
+</script>
+</html>

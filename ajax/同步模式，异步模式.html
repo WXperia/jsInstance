@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+     var xhr = new XMLHttpRequest();
+      //修改为true时为同步模式，会等待调用该对象的方法执行完成
+    xhr.open('GET','http://127.0.0.1:8080/iAjax/json.json',false);
+    xhr.send();
+    // console.log(xhr.readyState);
+    xhr.onreadystatechange = function(){
+        //load 时，
+        // xhr.readyState = 4;
+        console.log(this.readyState);
+    }
+</script>
+</html>

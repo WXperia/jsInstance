@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    .right{
+        color: green
+    }
+    .wrong{
+        color: red
+    }
+</style>
+<body>
+    <label for="">QQ</label><input type="text" id="QQ"><span></span><br/>
+    <label for="">手机</label><input type="text" id="phone"><span></span><br/>
+    <label for="">邮箱</label><input type="text" id="e-mail"><span></span><br/>
+    <label for="">座机</label><input type="text" id="telephone"><span></span><br/>
+    <label for="">姓名</label><input type="text" id="fillname"><span></span><br/>
+</body>
+<script>
+    function m$(a){
+        return document.querySelector(a)
+    }
+    check('QQ', m$('#QQ'))
+    check('QQ', m$('#phone'))
+    check('QQ', m$('#e-mail'))
+    check('QQ', m$('#QQ'))
+    function check(type, el){
+        el.onblur = function(){
+            if(type === 'QQ'){
+            if(/\d{5,13}/.test(this.value)){
+                this.nextElementSibling.innerText = "正确";
+                this.nextElementSibling.className = 'right'
+            }else {
+                this.nextElementSibling.innerText = "错了";
+                this.nextElementSibling.className = 'wrong'
+            }
+        }
+        if(type === 'phone'){
+            if(/\d{11,}/.test(this.value)){
+                this.nextElementSibling.innerText = "正确";
+                this.nextElementSibling.className = 'right'
+            }else {
+                this.nextElementSibling.innerText = "错了";
+                this.nextElementSibling.className = 'wrong'
+            }
+        }
+        if(type === 'e-mail'){
+            if(/^\w+[@]\W+([.]\w+){1,2}$/.test(this.value)){
+                this.nextElementSibling.innerText = "正确";
+                this.nextElementSibling.className = 'right'
+            }else {
+                this.nextElementSibling.innerText = "错了";
+                this.nextElementSibling.className = 'wrong'
+            }
+        }
+        if(type === 'telephone'){
+            if(/\d+[-]\d{7,8}/.test(this.value)){
+                this.nextElementSibling.innerText = "正确";
+                this.nextElementSibling.className = 'right'
+            }else {
+                this.nextElementSibling.innerText = "错了";
+                this.nextElementSibling.className = 'wrong'
+            }
+        }
+        if(type === 'fullname'){
+            if(/[\u4e00-\u9fa5]/.test(this.value)){
+                this.nextElementSibling.innerText = "正确";
+                this.nextElementSibling.className = 'right'
+            }else {
+                this.nextElementSibling.innerText = "错了";
+                this.nextElementSibling.className = 'wrong'
+            }
+        }
+
+        }
+       
+    }
+</script>
+</html>

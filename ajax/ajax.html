@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //XMLHttpRequest
+    //ajax 不能使用文件协议访问
+    //实际上，就是客户代理提供的api
+    //1、用户代理（浏览器）
+    /* 
+        安装浏览器
+        创建 xhr对象
+    */
+    var xhr = new XMLHttpRequest()
+    //如果需要捕获第一个状态的变化，需要注意代码执行顺序的问题，出现来不及的情况
+
+   /*  xhr.onreadystatechange = function(){
+        console.log(this.readyState);
+        
+    }; */
+    /* 
+        2、打开浏览器、输入网址
+    */
+    xhr.open('GET','http://127.0.0.1:8080/iAjax/json.json',);
+   /* 
+        3、发送请求（回车）
+   */
+    xhr.send();
+    /* 
+        4、等待响应
+            响应需要时间，异步相应
+    */
+    xhr.onreadystatechange = function(){
+        if(this.readyState !=4) return;
+        console.log(this);
+        
+    };
+    /* 
+        5、看结果
+    */
+    
+</script>
+</html>

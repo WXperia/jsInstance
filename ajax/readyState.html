@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    
+    var xhr = new XMLHttpRequest();
+    console.log(xhr.readyState);// console.log == 0 初始化，请求代理对象
+    xhr.open('GET','http://127.0.0.1:8080/iAjax/json.json');
+    console.log(xhr.readyState);//open 方法已经启用，建立了与服务器交互的特定端口
+    xhr.send();
+    console.log(xhr.readyState);//send 方法已经启用
+    xhr.addEventListener('readystatechange',function(event){
+        var e = event || window.event;
+        // if(this.readyState !=4) return;
+        console.log(this);
+        switch(this.readyState){
+            case 2:
+                 /* 
+                    2 => 已经接受到了响应报文的响应头
+                    但是没有拿到相应体
+                */
+                console.log(this.readyState);
+                console.log(this.getAllResponseHeaders().split('\n'));
+                console.log(this.responseText)
+                break;
+               
+               
+            case 3:
+                /* 
+                    3=> 响应体正在下载
+                        此时响应体还在下载，大多数情况下，拿到响应体都是不完整的
+                */
+                console.log(this.readyState); 
+                console.log(this.getAllResponseHeaders().split('\n'));
+                console.log(this.responseText);
+                break;
+            case 4:
+                /* 
+                    4=> 整个响应报文都完整的下载下来了
+                */
+                console.log(this.readyState);
+                console.log(this.getAllResponseHeaders().split('\n'));
+                console.log(this.responseText);
+                break;
+        }
+        // console.log(e);
+    })
+</script>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script src="../node_modules/echarts/dist/echarts.js"></script>
+<script></script>
+<style>
+    #main {
+        height: 500px;
+        width: 500px;
+    }
+</style>
+<body>
+    <button onclick="changeXY(option)">切换</button>
+    <div id="main">
+
+    </div>
+</body>
+<script>
+  
+
+    var mycharts = echarts.init(document.getElementById('main'))
+    // mycharts.showLoading({
+    //     text: '加载中...'
+    // })
+    var option = {
+        grid: {
+		 show:false,
+         left: '10%',
+         right: '10%',
+         top: '15%',
+         bottom: '10%',
+     },
+        title: {
+            text: '测试流量数据',
+            subtext: '虚构数据',
+            x: 'center',
+            backgroundColor: '#eee',
+            borderWidth: 3,
+            borderRadius: 3,
+            borderColor: '#ccc',
+            textStyle: {
+                color: '#000',
+                
+            },
+            subtextStyle: {
+                color: '#000',
+                
+            }
+        },
+        legend: {
+            padding: 5,
+            itemGap: 10,
+            data: ['ios','android'],
+            x: 'left',
+            borderColor: '#000',
+            borderWidth: 3,
+            borderRadius: 3,
+            textStyle: {
+                color: '#000',
+                fontWeight: 'bold'
+            }
+        },
+        tooltip: { //气泡提示配置
+            trigger: 'axis' //可修改为 axis
+        },
+        xAxis: [
+            {
+                type:'category',
+                data: ['1','2','3','4','5','6','7','8','9','10','11','12'],
+                boundaryGap: false,
+                show: false,
+                splitLine: {
+                    show:false
+                },
+                axisLine: {
+                    show: false
+                },
+                axisLabel: {
+                    show: true
+                }
+            }
+        ],
+        toolbox: { //工具箱类
+            show: true, //工具箱是否显示
+            feature: { //
+                mark: {
+                    show: true,
+                },
+                dataView: {
+                    show: false,
+                    readOnly: false, // 确定是否能够被修改
+                },
+                magicType: { //修改图的类型，折线图或者统计图
+                    show: true,
+                    type: ["line", "bar"]
+                },
+                restore: {
+                    show: true
+                },
+                saveAsImage: {
+                    show:true
+                }
+            }
+        },
+        dataZoom: { //数据区域缩放
+            show: true,
+            startValue: 1,
+            endValue: null,
+        },
+        // calculable:true, 
+        yAxis: [
+            {
+                type:'value',
+                // boundaryGap:[0.1,0.1], //控制轴方向上的数值留有多少空余，按此轴的百分比计算
+                splitNumber: 4,
+                show:false,
+                axisLine: {
+                    show: false
+                },
+                splitLine: {
+                    show:false
+                }
+            }
+        ],
+        series: [
+            {
+                name:'ios',
+                type:'line', //图表的类型，折线图 line，散点图scatter，柱状图bar，饼图pie，雷达图radar
+                data: [111,112,113,114,32,324,432,534,563,32,32,123]
+            },
+            {
+                name:'android',
+                type: 'line',
+                data: [45,123,145,526,233,343,44,829,33,123,45,13]
+            }
+        ]
+    }
+    mycharts.setOption(option)
+    function changeXY(option){
+        
+        let temp = []
+        temp = option.yAxis
+        option.yAxis = option.xAxis
+        option.xAxis = temp
+        mycharts.setOption(option)
+    }
+</script>
+</html>

@@ -1,0 +1,53 @@
+/* 
+    修改默认的属性，方便以后的自定样式
+    RESET CSS
+*/
+
+
+*,*::before,*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+body {
+    font-size: 14px;
+    font-family: "Mincrosoft YaHei",sans-serif;
+    color:#333;
+    
+}
+ul,ol{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: #333;
+}
+input,textarea {
+    border: none;
+    outline: none;
+    /* 不允许改变尺寸 */
+    resize: none;
+    /* 
+        修改浏览器默认的元素的外观；
+    */
+    -webkit-appearance: none;
+}
+/* common 公共样式 */
+.f_left {
+    float: left;
+}
+.f_right {
+    float: right;
+}
+/* 清除浮动 */
+.clearFix::before,.clearFix::after {
+    content: "";
+    display: block;
+    visibility: hidden;
+    height: 0;
+    width: 0;
+    line-height: 0;
+    clear: both;
+}

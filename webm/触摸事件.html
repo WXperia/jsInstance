@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+
+    </div>
+</body>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    div {
+        height: 100px;
+        width: 100%;
+        background: rgb(177, 113, 113);
+        position: absolute;
+        
+        transition: all linear 1s;
+    }
+    div:hover{
+        
+    }
+</style>
+<style>
+    /* 
+        1、touchstart 触摸屏触摸触发
+        2、touchmove    触摸点的移动
+        4、touchend     触摸点消失
+        5、touchcancel  当手指滑动时，被迫中止滑动的时候触发
+    */
+    /* 
+        利用touch 相关事件实现移动端常见的滑动效果和移动端常见的手势事件
+    */
+    /* 
+    
+        使用touch 事件组
+    */
+    /* 
+    
+        clientX Y 基于浏览器窗口
+        pageX Y 基于页面
+        screenX screenY 基于屏幕
+    */
+</style>
+<script>
+
+    var div = document.querySelector('div');
+    // div.addEventListener('touchstart'|| 'cilck',function(e){
+    //     div.addEventListener('touchmove',function(e){
+           
+    //         div.style.top = e.touches[0].pageY;
+    //     })
+       
+    //     console.log(e.type);
+    // })
+    // div.addEventListener('touchend',function(e){
+           
+    //     })
+        /* 
+            手势事件 移动端专用
+
+         */
+         addSwipeEvent(div,
+         function(){
+            console.log(this)
+         },function(){
+            console.log(this)
+         })
+    function addSwipeEvent(dom,leftcallback,rightcallback){
+        
+        var swipX = 0,
+            swipStart = 0,
+            swipEnd = 0;
+        dom.addEventListener('touchstart',function(event){
+            var e = event || window.event;
+            swipStart = e.touches[0].clientX;
+        })
+        dom.addEventListener('touchmove',function(event){
+            var e = event || window.event;
+            swipEnd = e.touches[0].clientX;
+            swipX = swipEnd - swipStart;
+        })
+        dom.addEventListener('touchend',function(event){
+            var e = event || window.event;
+            if(Math.abs(swipX) < 50){
+                return;
+            }
+            if(swipX < 0){
+                console.log('left');
+                leftcallback && leftcallback.call(this,e);
+                return;
+            }
+            if(swipX > 0){
+                console.log('right');
+                rightcallback && rightcallback.call(this,e);
+                return;
+            }
+        })
+    }
+    function swipEventFactory(dom,distance,callback){
+        this._dom = dom;
+        if(this instanceof swipEventFactory){
+            if(this[distance]){
+                var o = new this[distance](dom,callback);
+                return o;
+            }
+        }else{
+            return new swipEventFactory(dom,distance,callback);
+        }
+        
+    }
+    swipEventFactory.prototype = {
+        
+        Left:function(dom,callback){
+            var swipX = 0,
+                swipStart = 0,
+                swipEnd = 0;
+            dom.addEventListener('touchstart',function(){
+                    
+            })
+        },
+        Right:function(dom,callback){
+
+        },
+        top:function(dom,callback){
+
+        },
+        bottom:function(dom,callback){
+
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button value="按钮">gsdgs</button>
+</body>
+<script>
+    //为同一个元素绑定多个不同的事件，指向相同的事件处理函数
+    var btn = document.getElementsByTagName('button')[0];
+    function EVENT(event){
+        var e = event || window.event;
+        
+        switch (e.type){
+            case "click": return cli(e);break;
+            case "mouseenter": return me(e); break;
+        }
+    }
+    function cli (e){
+        console.log(e.type)
+    }
+    function me (e){
+        console.log(e.type)
+    }
+    btn.onclick = EVENT;
+    btn.onmouseenter = EVENT;
+    btn.onabort = EVENT;
+    btn.dblclick = EVENT;
+    btn.onmousedown = EVENT;
+    btn.onmousemove = EVENT;
+</script>
+</html>

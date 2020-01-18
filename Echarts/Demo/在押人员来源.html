@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script src="echarts-all.js"></script>
+<style>
+    #main {
+        height: 209px;
+        width: 177px;
+    }
+</style>
+<body>
+    <button onclick="changeXY(option)">切换</button>
+    <div id="main">
+
+    </div>
+</body>
+<script>
+  
+
+    var mycharts = echarts.init(document.getElementById('main'))
+    // mycharts.showLoading({
+    //     text: '加载中...'
+    // })
+    
+    // var option = {
+    //   tooltip: {
+    //       trigger:'item',
+    //       x: 'left',
+         
+    //   },
+    //   legend: {
+    //     data: ['公安','法院','检察机关','检察院','安全局','其他']
+    //   }
+      
+    // }
+    var option = {
+    tooltip: {
+        show: true,
+        trigger: 'item',
+        formatter: "{b}: {c} "
+    },
+    legend: {
+        orient: 'horizontal',
+        x: 'center',
+        y: 'bottom',
+        // data: ['公安','法院','检察机关','检察院','安全局','其他'],
+        data: [{
+            name: '公安',
+            // 强制设置图形为圆。
+            icon: 'cicle',
+            // 设置文本为红色
+            textStyle: {
+                color: 'red'
+            }
+        }],
+        width: 209,
+        height: 100,
+        textStyle: {
+            color: '#eee',
+            fontStyle: 'normal',
+            fontSize: 7,
+        }
+    },
+    series: [
+        {
+            name:'在押人员来源',
+            type:'pie',
+            radius: ['40%', '70%'],
+            avoidLabelOverlap: false,
+            center: ['50%', '40%'],
+            label: {
+                normal: {
+                    show: false,
+                    position: 'center'
+                },
+                emphasis: {
+                    show: true,
+                    textStyle: {
+                        fontSize: '13',
+                        fontWeight: 'bold'
+                    }
+                }
+                
+            },
+            labelLine: {
+                normal: {
+                    show: true
+                }
+            },
+            data:[
+                {value:335, name:'公安'},
+                {value:310, name:'法院'},
+                {value:234, name:'检察机关'},
+                {value:135, name:'检察院'},
+                {value:1548, name:'安全局'},
+                {value:1321,name:'其他'}
+            ]
+        }
+    ]
+};
+
+    mycharts.setOption(option)
+
+    function changeXY(option){
+        let temp = []
+        temp = option.yAxis
+        option.yAxis = option.xAxis
+        option.xAxis = temp
+        mycharts.setOption(option)
+    }
+</script>
+</html>
