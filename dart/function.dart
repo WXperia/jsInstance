@@ -22,6 +22,7 @@ void main(){
 void printInfo(e){
   print(e);
 }
+//定义了类型需要返回对应类型的值
 String createUsername(){
   return '45645';
 }

@@ -12,7 +12,6 @@ void main (){
     var myNum = double.parse(price);
     print(myNum);
     print(myNum is double);
-    
   }catch(err){
     print(0);
   }

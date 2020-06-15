@@ -17,7 +17,7 @@ void main (){
 
   int x = 1;
   String y = '1';
-  //dart z中不会自动转换需要对比的类型
+  //dart 中不会自动转换需要对比的类型
   if(x==int.parse(y)){
     print('x=y');
   }else{
